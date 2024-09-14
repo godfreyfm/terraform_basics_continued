@@ -1,6 +1,12 @@
 output "ami-data" {
-  value = data.aws_ami.myapp-ami.id
+  value = module.data_imports.ami_id
 }
 output "instace-pub-ip" {
-  value = aws_instance.myapp-server.public_ip
+  value = module.myapp_webserver.public_ip
+}
+output "myapp_subnet_id" {
+  value = module.myapp_subnet.myapp_subnet_id
+}
+output "myapp_igw_id" {
+  value = module.myapp_subnet.myapp_igw_id
 }

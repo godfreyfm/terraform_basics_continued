@@ -1,4 +1,21 @@
 
+### Create and update own .tfvars file with the following
+
+-- vpc_cidr_blocks = "**********"
+-- subnet_cidr_block = "**********"
+-- avail_zone = "**********"
+-- env_prefix = "**********"
+-- role_arn = "**********"
+-- region = "**********"
+-- all_IP = "**********"
+-- my_ip = "**********"
+-- instance_type = "**********"
+-- my_public_key_location = "~/.ssh/id_rsa.pub"
+-- my_private_key_location = "~/.ssh/id_rsa"
+-- associate_public_ip_address = **********
+-- user_data_replace_on_change = **********
+
+
 ## SSH Key Pair Setup
 
 Follow these steps to generate a public/private SSH key pair and use it within your Terraform configuration to access your EC2 instance.
