@@ -1,11 +1,12 @@
 
 
 resource "aws_instance" "myapp-server" {
+  count = length(var.avail_zone)
   ami = var.ami_id
   instance_type = var.instance_type
-  subnet_id = var.subnet_id
+  subnet_id = var.subnet_id[count.index]
   vpc_security_group_ids = [aws_security_group.myapp-sg.id]
-  availability_zone = var.avail_zone
+  availability_zone = var.avail_zone[count.index]
   associate_public_ip_address = var.associate_public_ip_address
   key_name = aws_key_pair.ssh-key.key_name
 
@@ -27,7 +28,7 @@ resource "aws_instance" "myapp-server" {
   # }
 
   tags = {
-    Name: "${var.env_prefix}-server"
+    Name: "${var.env_prefix}-server-${count.index}"
   }
 }
 resource "aws_security_group" "myapp-sg" {

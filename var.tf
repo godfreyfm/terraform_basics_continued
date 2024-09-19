@@ -8,11 +8,11 @@ variable "vpc_cidr_blocks" {
 }
 variable "subnet_cidr_block" {
   description = "This is the cidr block for the subnet"
-  type = string
+  type = list(string)
 }
 variable "avail_zone" {
   description = "Availability zone that is utilized"
-  type = string
+  type = list(string)
 }
 variable "env_prefix" {
   description = "This is the prefix for the environment being used"

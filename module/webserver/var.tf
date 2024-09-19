@@ -5,7 +5,7 @@ variable "instance_type" {
 }
 variable "avail_zone" {
   description = "Availability zone that is utilized"
-  type = string
+  type = list(string)
 }
 variable "env_prefix" {
   description = "This is the prefix for the environment being used"
@@ -39,7 +39,7 @@ variable "user_data_replace_on_change" {
 
 variable "subnet_id" {
   description = "The subnet ID to place this in"
-  type = string
+  type = list(string)
 }
 
 variable "vpc_id" {

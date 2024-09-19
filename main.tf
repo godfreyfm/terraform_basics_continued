@@ -32,7 +32,7 @@ module "myapp_webserver" {
   my_public_key_location = var.my_public_key_location
   user_data_replace_on_change = var.user_data_replace_on_change
   associate_public_ip_address = var.associate_public_ip_address
-  subnet_id = module.myapp_subnet.myapp_subnet_id
+  subnet_id = module.myapp_subnet.myapp_subnet_ids
   vpc_id = module.myapp_vpc.vpc_id
   ami_id = module.data_imports.ami_id
 }
