@@ -10,3 +10,7 @@
 
 # The backend
 backend.tf
+
+# Helper Scripts
+
+helper_scripts
